@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trama · Marketplace de emprendedores</title>
+<meta name="description" content="Moda, joyería, mascotas, alimentos y más, hechos por emprendedores y marcas independientes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#app">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#/">Trama</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#/catalogo" class="hide-sm">Catálogo</a>
+      <a href="#/vender">Vender</a>
+    </nav>
+    <a class="cart-link" href="#/carrito" aria-label="Carrito">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span id="cart-count" class="badge" hidden>0</span>
+    </a>
+    <form class="search" id="search-form" role="search">
+      <label class="sr" for="q">Buscar productos o marcas</label>
+      <input id="q" name="q" type="search" placeholder="Buscar productos o marcas" autocomplete="off" maxlength="80">
+      <button type="submit" aria-label="Buscar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+    </form>
+  </div>
+</header>
+
+<main id="app" class="wrap" tabindex="-1"></main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <strong>Trama</strong>
+    <span>Mockup con datos de ejemplo. Las marcas y productos no son reales.</span>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Navegación">
+  <a href="#/" data-tab=""><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z"/></svg><span>Inicio</span></a>
+  <a href="#/catalogo" data-tab="catalogo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Catálogo</span></a>
+  <button type="button" class="tab-ai" data-open-ai aria-haspopup="dialog"><span class="ai-dot"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><span>Trama IA</span></button>
+  <a href="#/carrito" data-tab="carrito" class="tab-cart"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Carrito</span><span id="cart-count2" class="badge" hidden>0</span></a>
+  <a href="#/vender" data-tab="vender"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/></svg><span>Vender</span></a>
+</nav>
+
+<button class="fab" id="ai-fab" data-open-ai aria-haspopup="dialog">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>
+  <span><span class="hide-sm">Pregúntale a </span>Trama IA</span>
+</button>
+
+<dialog id="ai" class="ai" aria-labelledby="ai-title">
+  <div class="ai-head">
+    <div>
+      <strong id="ai-title">Trama IA</strong>
+      <div class="note">Tu asistente de compras</div>
+    </div>
+    <button type="button" class="icon-btn" id="ai-close" aria-label="Cerrar asistente">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="ai-log" id="ai-log" role="log" aria-live="polite"></div>
+  <div class="ai-sugs" id="ai-sugs"></div>
+  <form class="ai-form" id="ai-form" autocomplete="off">
+    <label class="sr" for="ai-input">Escribe tu mensaje</label>
+    <input id="ai-input" maxlength="300" placeholder="Ej. un regalo para mi mamá, menos de $500">
+    <button class="btn primary" type="submit">Enviar</button>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
